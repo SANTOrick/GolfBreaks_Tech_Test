@@ -47,3 +47,7 @@ C:\Users\ricca\Desktop\Project\GOLFB\backend\obj\Debug\netcoreapp3.1\backend.dll
 C:\Users\ricca\Desktop\Project\GOLFB\backend\obj\Debug\netcoreapp3.1\backend.pdb
 C:\Users\ricca\Desktop\Project\GOLFB\backend\obj\Debug\netcoreapp3.1\backend.genruntimeconfig.cache
 C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\response.json
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -24,6 +24,7 @@ namespace backend
             services.AddSpaStaticFiles(configuration: options => { options.RootPath = "wwwroot"; });
             services.AddControllers(options => options.EnableEndpointRouting = false);
             services.AddCors();
+            services.AddSwaggerGen();  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,7 +40,11 @@ namespace backend
                 .AllowAnyHeader()
                 .SetIsOriginAllowed(origin => true) // allow any origin
                 .AllowCredentials()); // allow credentials
-
+            app.UseSwagger();  
+            app.UseSwaggerUI(c =>  
+            {  
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Ads API");  
+            });  
             app.UseAuthentication();
             app.UseMvc();
             app.UseRouting();
