@@ -51,3 +51,6 @@ C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Microsoft.O
 C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\ricca\Desktop\Project\GOLFB\backend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll

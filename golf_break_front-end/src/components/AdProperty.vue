@@ -1,7 +1,18 @@
 <template>
   <div class="Ad">
     <div class="main-wrapper">
-      <img :alt="ad.url" class="location-image" :src="ad.image.file.url" />
+      <div class="image-wrapper">
+        <img :alt="ad.url" class="location-image" :src="ad.image.file.url" />
+        <div class="star-wrapper">
+          <div
+            v-for="(n, i) in ad.data[0].venue_information.official_star_rating"
+            :key="i"
+            class="animation-wrapper"
+          >
+            <img class="star-image" :alt="i" src="../assets/star.png" />
+          </div>
+        </div>
+      </div>
       <div class="description-wrapper">
         <div class="title-spacer">
           <span class="location-title">{{
@@ -9,15 +20,6 @@
           }}</span>
           <div class="name-rating-wrapper">
             <span class="location-full-name">{{ ad.full_name }}</span>
-            <div class="star-wrapper">
-              <div
-                v-for="(n, i) in ad.data[0].venue_information
-                  .official_star_rating"
-                :key="i"
-              >
-                <img class="star-image" :alt="i" src="../assets/star.png" />
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -35,7 +37,7 @@
             </div>
           </div>
         </div>
-        <img class="book-image" :alt="ad.url" src="../assets/book_online.png" />
+        <img class="book-image" :alt="ad.url" src="../assets/book.png" />
       </div>
     </div>
   </div>
@@ -78,8 +80,8 @@ export default defineComponent({
 .location-image {
   height: 150px;
   width: 250px;
-  border-radius: 9px;
   padding-bottom: 15px;
+  border-radius: 9px 9px 9px 45px;
 }
 
 .location-title {
@@ -96,6 +98,16 @@ export default defineComponent({
 .price-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.image-wrapper {
+  position: relative;
+  transition: .3s;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  z-index: 1;
 }
 
 .book-image {
@@ -138,6 +150,10 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  position: absolute;
+  background-color: transparent;
+  bottom: 20px;
+  right: 10px;
 }
 
 .description-wrapper {
@@ -166,7 +182,53 @@ export default defineComponent({
 }
 
 hr {
-  border-top: gray;
+  border-color: #b5ada2;
   width: 100%;
+  border-top-color: white;
+}
+
+.animation-wrapper {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  bottom: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.animation-wrapper img {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  animation: hithere 1s linear;
+  animation-fill-mode: both;
+  -webkit-animation-name: bounce-in-right;
+  -webkit-animation-duration: 0.2s;
+}
+
+.star-wrapper div:nth-child(1) img {
+  animation-delay: 0.1s;
+}
+.star-wrapper div:nth-child(2) img {
+  animation-delay: 0.2s;
+}
+.star-wrapper div:nth-child(3) img {
+  animation-delay: 0.3s;
+}
+.star-wrapper div:nth-child(4) img {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(2000);
+  }
 }
 </style>

@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using backend.Services;
+
 namespace backend
 {
      public class Startup
@@ -24,6 +26,8 @@ namespace backend
             services.AddSpaStaticFiles(configuration: options => { options.RootPath = "wwwroot"; });
             services.AddControllers(options => options.EnableEndpointRouting = false);
             services.AddCors();
+            services.AddControllersWithViews().AddNewtonsoftJson();
+            services.AddScoped<IAdsService, AdsService>();
             services.AddSwaggerGen();  
         }
 

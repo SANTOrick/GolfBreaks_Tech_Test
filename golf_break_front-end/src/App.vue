@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import Vue, { defineComponent } from "vue";
-import AdComponent from "../src/components/AdComponent.vue";
 
 export default defineComponent({});
 </script>
@@ -17,6 +16,10 @@ export default defineComponent({});
   text-align: center;
   color: #2c3e50;
   width: 100%;
+}
+
+html {
+  background-color: rgb(218, 214, 212);
 }
 
 #nav {

@@ -3,24 +3,24 @@ using System.Threading.Tasks;
 using System.IO;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using backend.Services;
 
 namespace backend.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class AdsController : ControllerBase
-    {
+    {  
+        readonly IAdsService _service;
+
+        public AdsController(IAdsService service){
+            _service = service;
+        }
 
         [HttpGet]
-        public string Get()
+        public AdResponse Get()
         {
-            string currentPath = Directory.GetCurrentDirectory();
-
-            currentPath = currentPath +"\\response.json";
-
-            string jsonMe = System.IO.File.ReadAllText(@currentPath);
-        
-            return jsonMe;
+          return _service.GetAds();
         }
 
     }
