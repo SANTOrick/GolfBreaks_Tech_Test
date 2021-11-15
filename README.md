@@ -13,3 +13,6 @@ Open a second terminal in \backend
 command: dotnet run
 
 Default port is :8080 for the the Vue project
+
+API DOCUMENTATION:
+http://localhost:5000/swagger/index.html
